@@ -1,25 +1,24 @@
-
+import { useState } from 'react'
 import './App.css'
+import {puppyList} from './data.js'
 
 function App() {
 
-  return (
-    <>
+  const [puppies, setPuppies] = useState(puppyList);
 
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+  console.log("puppyList: ", puppyList);
+
+  return (
+    <div className="App">
+      <h1>Here is the array list of puppies:</h1>
+      {
+        puppies.map((puppy) => {
+             return <p key={puppy.id}>{puppy.name}</p>;
+           })
+       }
+    </div>
+  );
 }
+
 
 export default App
