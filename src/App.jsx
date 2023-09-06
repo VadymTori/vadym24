@@ -9,36 +9,18 @@ function App() {
   function handleClick() {
     // some logic here
     {()=>{console.log("puppy id: ", puppy.id)}}
+/*     console.log("Text for testing") */
   }
   return (
     <div className="App">
       {puppies.map((puppy) => {
         return (
-          <p onClick={handleClick} key={puppy.id}>
+          <button onClick={handleClick} key={puppy.id}>
             {puppy.name}
-          </p>
+          </button>
         );
       })}
     </div>
   );
 }
 export default App
-
-
-
-/* function App() {
-
-  const [puppies, setPuppies] = useState(puppyList);
-
-  console.log("puppyList: ", puppyList);
-
-  return (
-    <div className="App">
-      {
-        puppies.map((puppy) => {
-             return <p key={puppy.id}>{puppy.name}</p>;
-           })
-       }
-    </div>
-  );
-} */
